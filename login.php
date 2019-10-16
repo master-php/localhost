@@ -59,6 +59,11 @@
                                         <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
 
                                         <div class="col-md-6">
+	                                        <?php if (isset($_COOKIE['send-dont']) && $_COOKIE['send-dont'] == "5"): ?>
+		                                        <div class = "alert alert-warning" role="alert">
+			                                        данный e-mail не существует
+		                                        </div>
+	                                        <?php endif; ?>
                                             <input id="email" type="email" class="form-control is-invalid " name="email"  autocomplete="email" autofocus >
 <!--                                                <span class="invalid-feedback" role="alert">-->
 <!--                                                    <strong>Ошибка валидации</strong>-->

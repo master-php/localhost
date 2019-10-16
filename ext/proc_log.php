@@ -10,8 +10,8 @@ if(!empty($_POST)) {
 	$formEmail = $_POST['email'];
 	$result = mysqli_query($conn,"SELECT id FROM reg WHERE email = '$formEmail'");
 	$myrow = mysqli_fetch_array($result);
-	if (!empty($myrow['id'])) {
-		setcookie('send-', "5", time() + 1, '/');
+	if (empty($myrow['id'])) {
+		setcookie('send-dont', "5", time() + 1, '/');
 		header("Location: /../register.php");
 		exit;
 	}
